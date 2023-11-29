@@ -1,6 +1,6 @@
-const winston = require("winston");
-const express = require("express");
-const config = require("config");
+import { info } from "winston";
+import express from "express";
+import { get } from "config";
 const app = express();
 
 require("./startup/logging")();
@@ -10,9 +10,7 @@ require("./startup/db")();
 require("./startup/config")();
 require("./startup/validation")();
 
-const port = process.env.PORT || config.get("port");
-const server = app.listen(port, () =>
-  winston.info(`Listening on port ${port}...`)
-);
+const port = process.env.PORT || get("port");
+const server = app.listen(port, () => info(`Listening on port ${port}...`));
 
-module.exports = server;
+export default server;
