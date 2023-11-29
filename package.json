@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "seed": "node seed.js",
-    "test": "jest --watchAll --verbose",
-    "build": "npm run build"
+    "test": "jest --watchAll --verbose"
   },
   "keywords": [],
   "author": "",
